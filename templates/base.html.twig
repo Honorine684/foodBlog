@@ -1,17 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %}Delicious - Food Blog Template{% endblock %}</title>
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
+        <!-- Favicon -->
+        <link rel="icon" href="{{ asset('delicious-master/img/core-img/favicon.ico') }}">
+
+        <!-- Core Stylesheet -->
+        <link rel="stylesheet" href="{{ asset('delicious-master/style.css') }}">
+        {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        <!-- Preloader -->
+        <div id="preloader">
+            <i class="circle-preloader"></i>
+            <img src="{{ asset('delicious-master/img/core-img/salad.png') }}" alt="">
+        </div>
+
+        <!-- Search Wrapper -->
+        <div class="search-wrapper">
+            <!-- Close Btn -->
+            <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <form action="#" method="post">
+                            <input type="search" name="search" placeholder="Type any keywords...">
+                            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         {% block body %}{% endblock %}
+
+        <!-- jQuery (Necessary for All JavaScript Plugins) -->
+        <script src="{{ asset('delicious-master/js/jquery/jquery-2.2.4.min.js') }}"></script>
+        <!-- Popper js -->
+        <script src="{{ asset('delicious-master/js/plugins/popper.min.js') }}"></script>
+        <!-- Bootstrap js -->
+        <script src="{{ asset('delicious-master/js/bootstrap/bootstrap.min.js') }}"></script>
+        <!-- Plugins js -->
+        <script src="{{ asset('delicious-master/js/plugins/plugins.js') }}"></script>
+        <!-- Active js -->
+        <script src="{{ asset('delicious-master/js/active.js') }}"></script>
+        {% block javascripts %}{% endblock %}
     </body>
 </html>
